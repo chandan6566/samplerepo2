@@ -2,13 +2,19 @@ pipeline{
     agent any
     stages{
         stage('Memory Usage'){
-            sh 'echo "htop"'
+            steps{
+                sh 'echo "htop"'
+            }
         }
         stage('Disk Usage'){
-            sh 'echo "df -h"'
+            steps{
+                sh 'echo "df -h"'
+            }
         }
         stage('Listing Files'){
-            sh 'echo "ls -l"'
+            steps{
+                sh 'echo "ls -l"'
+            }
         }     
     }
 }
