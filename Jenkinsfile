@@ -6,5 +6,10 @@ pipeline{
                 sh 'echo "htop"'
             }
         }
+        stage('Disk Usage'){
+            steps{
+                sh 'echo "df -h"'
+            }
+        }
     }
 }
