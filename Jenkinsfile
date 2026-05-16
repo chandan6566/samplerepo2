@@ -5,6 +5,7 @@ pipeline{
         stage('Front End'){
             agent{
                 docker { image 'cloudstack/marvin' }
+            }
             steps{
                 sh 'mvn --version'
             }
