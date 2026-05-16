@@ -1,14 +1,12 @@
 pipeline{
-    agent any
+    agent{
+        docker { image 'node:16-alpine' }
+    }
+    
     stages{
-        stage('Memory Usage'){
+        stage('Test'){
             steps{
-                sh 'echo "htop"'
-            }
-        }
-        stage('Disk Usage'){
-            steps{
-                sh 'echo "df -h"'
+                sh 'node --version'
             }
         }
     }
