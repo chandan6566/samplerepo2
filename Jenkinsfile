@@ -1,13 +1,22 @@
 pipeline{
-    agent{
-        docker { image 'node:16-alpine' }
-    }
+    agent none
     
     stages{
-        stage('Test'){
+        stage('Front End'){
+            agent{
+                docker { image 'cloudstack/marvin' }
             steps{
-                sh 'node --version'
+                sh 'mvn --version'
             }
         }
     }
+        stage('Backend'){
+            agent{
+                docker {image 'node:16-latest' }
+            }
+            steps{
+                sh 'node --version'
+            }
+    }
+}
 }
