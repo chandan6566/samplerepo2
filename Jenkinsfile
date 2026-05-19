@@ -2,7 +2,7 @@ pipeline {
     agent none  // No global agent; each stage uses its own Docker container
     
     stages {
-        stage('Front End') {
+        stage('Front End) {
             agent {
                 docker { image 'maven:3.9.2-openjdk-17' } // Maven + Java preinstalled
             }
